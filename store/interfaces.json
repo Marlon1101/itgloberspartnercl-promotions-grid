@@ -1,5 +1,6 @@
 {
   "promotion-grid": {
-    "component": "PromotionGrid"
+    "component": "PromotionGrid",
+    "composition": "children"
   }
 }
