@@ -16,7 +16,7 @@ type Props = {
   typeScreen: string
 }
 
-const PromotionGrid =({gridType = 4, children, typeScreen = "mobile"}: Props)=> {
+const PromotionGrid =({gridType = 6, children, typeScreen = "mobile"}: Props)=> {
   console.log(gridType)
   const gridTypeClass =
   typeScreen === "desktop"
@@ -27,18 +27,22 @@ const PromotionGrid =({gridType = 4, children, typeScreen = "mobile"}: Props)=> 
     <CustomGridItemBig
       element= {children[0]}
     />
+    <div className={styles[`itemSmall__1--${gridType}`]}>
     <CustomGridItemSmall
       gridType={gridType}
       typeScreen={typeScreen}
       elementOne= {children[1]}
       elementTwo= {children[2]}
     />
+    </div>
+    <div className={styles[`itemSmall__2--${gridType}`]}>
     <CustomGridItemSmall
       gridType={gridType}
       typeScreen={typeScreen}
       elementOne= {children[3]}
       elementTwo= {children[4]}
     />
+    </div>
     </div>
   )
 }

@@ -17,12 +17,12 @@ const CustomGridItemSmall = ({gridType, typeScreen, elementOne, elementTwo}: Pro
   const gridTypeElementOne =
   typeScreen === "desktop"
   ? `grid__elementOne--desktop`
-  : `grid__elementOne--mobile`
+  : `grid__elementOne--mobile--${gridType}`
 
   const gridTypeElementTwo =
   typeScreen === "desktop"
   ? `grid__elementTwo--desktop`
-  : `grid__elementTwo--mobile`
+  : `grid__elementTwo--mobile--${gridType}`
 
   return(
     <div className={styles[gridTypeContainer]}>
