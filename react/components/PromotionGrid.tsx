@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import promotionGridSchema from '../schemas/custom-grid-schema'
 import CustomGridItemBig from './CustomGridItemBig';
 import CustomGridItemSmall from './CustomGridItemSmall';
@@ -6,18 +6,21 @@ import styles from "./styles.css"
 
 type Props = {
   gridType: number
-  children: [
-    ReactNode,
-    ReactNode,
-    ReactNode,
-    ReactNode,
-    ReactNode
-  ]
   typeScreen: string
+  products: {
+    name: string,
+    title: string,
+    description: string,
+    cta: string,
+    image: string
+  }[]
 }
 
-const PromotionGrid =({gridType = 6, children, typeScreen = "mobile"}: Props)=> {
-  console.log(gridType)
+const PromotionGrid =({
+  products,
+  gridType,
+  typeScreen
+}: Props)=> {
   const gridTypeClass =
   typeScreen === "desktop"
   ? `grid__${gridType}--desktop`
@@ -25,22 +28,22 @@ const PromotionGrid =({gridType = 6, children, typeScreen = "mobile"}: Props)=> 
   return (
     <div className={styles[gridTypeClass]}>
     <CustomGridItemBig
-      element= {children[0]}
+      element= {products[0]}
     />
     <div className={styles[`itemSmall__1--${gridType}`]}>
     <CustomGridItemSmall
       gridType={gridType}
       typeScreen={typeScreen}
-      elementOne= {children[1]}
-      elementTwo= {children[2]}
+      elementOne= {products[1]}
+      elementTwo= {products[2]}
     />
     </div>
     <div className={styles[`itemSmall__2--${gridType}`]}>
     <CustomGridItemSmall
       gridType={gridType}
       typeScreen={typeScreen}
-      elementOne= {children[3]}
-      elementTwo= {children[4]}
+      elementOne= {products[3]}
+      elementTwo= {products[4]}
     />
     </div>
     </div>
