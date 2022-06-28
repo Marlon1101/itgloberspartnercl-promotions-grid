@@ -1,4 +1,4 @@
-import React from 'react';
+import React /* { useEffect, useState } */ from 'react';
 import promotionGridSchema from '../schemas/custom-grid-schema'
 import CustomGridItemBig from './CustomGridItemBig';
 import CustomGridItemSmall from './CustomGridItemSmall';
@@ -18,13 +18,11 @@ type Props = {
 
 const PromotionGrid =({
   products,
-  gridType,
-  typeScreen
+  gridType
 }: Props)=> {
-  const gridTypeClass =
-  typeScreen === "desktop"
-  ? `grid__${gridType}--desktop`
-  : `grid__${gridType}--mobile`
+
+  const gridTypeClass = `grid__${gridType}`
+
   return (
     <div className={styles[gridTypeClass]}>
     <CustomGridItemBig
@@ -33,7 +31,6 @@ const PromotionGrid =({
     <div className={styles[`itemSmall__1--${gridType}`]}>
     <CustomGridItemSmall
       gridType={gridType}
-      typeScreen={typeScreen}
       elementOne= {products[1]}
       elementTwo= {products[2]}
     />
@@ -41,7 +38,6 @@ const PromotionGrid =({
     <div className={styles[`itemSmall__2--${gridType}`]}>
     <CustomGridItemSmall
       gridType={gridType}
-      typeScreen={typeScreen}
       elementOne= {products[3]}
       elementTwo= {products[4]}
     />

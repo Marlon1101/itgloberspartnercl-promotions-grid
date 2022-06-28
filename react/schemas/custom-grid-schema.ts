@@ -6,6 +6,33 @@ const promotionGridSchema = {
       title: "Tipo de pantalla",
       type: "string",
       enum: ["desktop", "mobile"]
+    },
+    products: {
+      title: "Productos",
+      type: "array",
+      items: {
+        type: "object",
+        properties: {
+            name: {
+                type: "string"
+            },
+            title: {
+                type: "string"
+            },
+            description: {
+                type: "string"
+            },
+            cta: {
+                type: "string"
+            },
+            image: {
+              widget: {
+                'ui:widget': 'image-uploader',
+              },
+              type: "string"
+            }
+        }
+      }
     }
   },
   dependencies: {

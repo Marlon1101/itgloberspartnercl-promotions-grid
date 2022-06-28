@@ -3,7 +3,6 @@ import styles from "./styles.css"
 
 type Props = {
   gridType: number
-  typeScreen: string
   elementOne: {
     name: string,
     /* title: string, */
@@ -22,25 +21,14 @@ type Props = {
 
 const CustomGridItemSmall = ({
   gridType,
-  typeScreen,
   elementOne,
   elementTwo
 }: Props) => {
-  console.log("2", elementOne, "3", elementTwo)
-  const gridTypeContainer =
-  typeScreen === "desktop"
-  ? `grid__itemSmall__${gridType}--desktop`
-  : `grid__itemSmall__${gridType}--mobile`
+  const gridTypeContainer = `grid__itemSmall__${gridType}`
 
-  const gridTypeElementOne =
-  typeScreen === "desktop"
-  ? `grid__elementOne--desktop--${gridType}`
-  : `grid__elementOne--mobile--${gridType}`
+  const gridTypeElementOne = `grid__elementOne--${gridType}`
 
-  const gridTypeElementTwo =
-  typeScreen === "desktop"
-  ? `grid__elementTwo--desktop--${gridType}`
-  : `grid__elementTwo--mobile--${gridType}`
+  const gridTypeElementTwo = `grid__elementTwo--${gridType}`
 
   return(
     <div className={styles[gridTypeContainer]}>
@@ -51,10 +39,10 @@ const CustomGridItemSmall = ({
         <a className={styles["cta__itemSmall"]} href={elementOne.cta}>Ver más</a>
       </div>
       <div className={styles[gridTypeElementTwo]}>
-        <img className={styles["img__itemSmall"]} src={elementOne.image}/>
-        <h2 className={styles["name__itemSmall"]}>{elementOne.name}</h2>
-        <p className="mt0 mb0">{elementOne.description}</p>
-        <a className={styles["cta__itemSmall"]} href={elementOne.cta}>Ver más</a>
+        <img className={styles["img__itemSmall"]} src={elementTwo.image}/>
+        <h2 className={styles["name__itemSmall"]}>{elementTwo.name}</h2>
+        <p className="mt0 mb0">{elementTwo.description}</p>
+        <a className={styles["cta__itemSmall"]} href={elementTwo.cta}>Ver más</a>
       </div>
     </div>
   )

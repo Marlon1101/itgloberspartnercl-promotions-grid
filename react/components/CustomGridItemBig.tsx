@@ -14,8 +14,6 @@ type Props = {
 const CustomGridItemBig = ({
   element,
 }: Props) => {
-
-  console.log("1", element)
   return(
     <div className={styles["grid__itemBig"]}>
         <img className={styles["img__itemBig"]} src={element.image}/>
