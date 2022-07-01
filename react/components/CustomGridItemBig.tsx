@@ -4,7 +4,6 @@ import styles from "./styles.css"
 type Props = {
   element: {
     name: string,
-    /* title: string, */
     description: string,
     cta: string,
     image: string

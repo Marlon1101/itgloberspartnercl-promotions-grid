@@ -1,4 +1,4 @@
-import React /* { useEffect, useState } */ from 'react';
+import React from 'react';
 import promotionGridSchema from '../schemas/custom-grid-schema'
 import CustomGridItemBig from './CustomGridItemBig';
 import CustomGridItemSmall from './CustomGridItemSmall';

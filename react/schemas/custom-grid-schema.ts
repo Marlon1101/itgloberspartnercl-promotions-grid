@@ -16,9 +16,6 @@ const promotionGridSchema = {
             name: {
                 type: "string"
             },
-            title: {
-                type: "string"
-            },
             description: {
                 type: "string"
             },

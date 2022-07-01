@@ -5,14 +5,12 @@ type Props = {
   gridType: number
   elementOne: {
     name: string,
-    /* title: string, */
     description: string,
     cta: string,
     image: string
   }
   elementTwo: {
     name: string,
-    /* title: string, */
     description: string,
     cta: string,
     image: string
@@ -40,8 +38,8 @@ const CustomGridItemSmall = ({
       </div>
       <div className={styles[gridTypeElementTwo]}>
         <img className={styles["img__itemSmall"]} src={elementTwo.image}/>
-        <h2 className={styles["name__itemSmall"]}>{elementTwo.name}</h2>
-        <p className="mt0 mb0">{elementTwo.description}</p>
+          <h2 className={styles["name__itemSmall"]}>{elementTwo.name}</h2>
+          <p className="mt0 mb0">{elementTwo.description}</p>
         <a className={styles["cta__itemSmall"]} href={elementTwo.cta}>Ver más</a>
       </div>
     </div>
